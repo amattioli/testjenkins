@@ -10,5 +10,5 @@ node {
 	def mvnHome = tool 'Maven 3.3.3'
 	bat "${mvnHome}\\bin\\mvn clean package"
 	archive 'target/*.jar'
-	archive 'target/surefire-reports/*.*'
+	junit()
 }
