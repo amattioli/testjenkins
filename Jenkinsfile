@@ -1,5 +1,5 @@
 node {
-	echo 'Checkout from GitHub'
+	echo 'Checkout from SCM'
 	checkout scm
 	echo 'Building project'
 	def mvnHome = tool 'Maven 3.3.3'
