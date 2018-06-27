@@ -2,13 +2,13 @@ pipeline {
     agent {
         docker {
             image 'maven:3-alpine' 
-            args '-v /home/.m2:/root/.m2' 
+            args '-v /root/.m2:/root/.m2 -v /home:/settings' 
         }
     }
     stages {
         stage('Build') { 
             steps {
-                sh 'mvn -B clean install' 
+                sh 'mvn -s /settings/settings.xml -B clean install' 
             }
         }
     }
